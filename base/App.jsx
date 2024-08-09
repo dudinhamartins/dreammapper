@@ -18,12 +18,12 @@ return(
 
 // PROJETO
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Cadastrar">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Inicio" component={Inicio} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Cadastrar" component={Cadastro} />
-        <Stack.Screen name="Senha" component={RedefinirSenha} />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen options={{ headerStyle: { backgroundColor: '#B0C4DE' }, headerTintColor: '#B0C4DE', }} name="Home" component={Home} />
+        <Stack.Screen  options={{ headerStyle: { backgroundColor: '#B0C4DE' }, headerTintColor: '#B0C4DE', }} name="Inicio" component={Inicio} />
+        <Stack.Screen options={{ headerStyle: { backgroundColor: '#B0C4DE' }, headerTintColor: '#B0C4DE', }} name="Login" component={Login} />
+        <Stack.Screen options={{ headerStyle: { backgroundColor: '#B0C4DE' }, headerTintColor: '#B0C4DE', }} name="Cadastrar" component={Cadastro} />
+        <Stack.Screen options={{ headerStyle: { backgroundColor: '#B0C4DE' }, headerTintColor: '#B0C4DE', }} name="Senha" component={RedefinirSenha} />
         
       </Stack.Navigator>
     </NavigationContainer>

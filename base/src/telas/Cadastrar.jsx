@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, TextInput, Button, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
+import { View, Image, TextInput, Button, StyleSheet, TouchableOpacity, Text, Alert, value} from 'react-native';
 import axios from 'axios';
 import { useState } from 'react';
 
@@ -48,7 +48,7 @@ const Cadastro = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <View style={styles.logo}>
-            <Image source={require("../../res/img/logo.png")}></Image>
+            <Image source={require("../../res/img/logo2.png")}></Image>
         </View>
         <Text style={styles.title}></Text>
         <TextInput
@@ -67,7 +67,7 @@ const Cadastro = ({ navigation }) => {
         <TextInput
             style={styles.input}
             placeholder="Email"
-            onChangeText={setEmail}
+            onChangeText={value => setEmail(value.toLowerCase())} 
             value={email}
             keyboardType="email-address"
         />
@@ -83,9 +83,8 @@ const Cadastro = ({ navigation }) => {
                 <Button title="Cadastrar" onPress={handleCadastro} color="#516c76" />
             </View>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                <Text style={styles.link}>Já tem uma conta? entre aqui</Text>
-            </TouchableOpacity>
+        <Text style={styles.text}>Já tem uma conta? <Text onPress={() => navigation.navigate('Login')} style={styles.link} >Entre aqui</Text></Text>
+      
         
   
     </View>
@@ -113,7 +112,8 @@ input: {
     padding: 10,
     width: '80%',
     marginBottom: '2%',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    borderRadius: 20
 },
 buttonContainer: {
     flexDirection: 'column',
@@ -134,7 +134,14 @@ logo: {
     height: '2',
     marginTop: '-25%'
 },
+text: {
+color: 'white',
+fontWeight: '500',
+
+},
 link:{
+  color: '#475f68',
+  fontWeight: '600',
 }
 });
 

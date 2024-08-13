@@ -5,7 +5,7 @@ const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.logo}>
-                <Image source={require("../../res/img/logo.png")}></Image>
+                <Image source={require("../../res/img/logo2.png")}></Image>
             </View>
             <Text style={styles.title}></Text>
             <View style={styles.buttonContainer}>

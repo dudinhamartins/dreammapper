@@ -13,7 +13,7 @@ router.post('/user/login', clientController.Login); //login dos alunos
 
 //rota reset 
 router.post('/user/reset', clientController.getEmailReset)
-router.put('/user/resetsenha', clientController.resetPassword); 
+router.post('/user/resetsenha', clientController.resetPassword); 
 
 //rota sono
 

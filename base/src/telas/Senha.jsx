@@ -44,6 +44,11 @@ const RedefinirSenha = ({navigation}) => {
 
   const handleTrocarSenha = async () => {
       try {
+       
+        if (!email || !novaSenha || !confirmarSenha) {
+            Alert.alert('Erro', 'Todos os campos são obrigatórios!');
+            return;
+          }
           // Verificar se as senhas coincidem
           if (novaSenha !== confirmarSenha) {
               Alert.alert('As senhas não coincidem.');
@@ -71,7 +76,7 @@ const RedefinirSenha = ({navigation}) => {
   return (
       <View style={styles.container}>
         <View style={styles.logo}>
-            <Image source={require("../../res/img/logo.png")}></Image>
+            <Image source={require("../../res/img/logo2.png")}></Image>
         </View>
           <Text style={styles.title}>Esqueceu sua senha?</Text>
           <TextInput
@@ -133,6 +138,8 @@ const styles = StyleSheet.create({
     width: '80%',
     marginBottom: '3%',
     backgroundColor: 'white',
+    borderRadius: 20
+
   },
   btn: {
       marginBottom: 100,

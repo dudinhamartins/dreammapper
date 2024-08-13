@@ -52,13 +52,13 @@ const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <View style={styles.logo}>
-            <Image source={require("../../res/img/logo.png")}></Image>
+            <Image source={require("../../res/img/logo2.png")}></Image>
         </View>
         <Text style={styles.title}></Text>
         
         <TextInput
             style={styles.input}
-            placeholder="Email"
+            placeholder="Email" 
             onChangeText={setEmail}
             value={email}
             keyboardType="email-address"
@@ -77,14 +77,11 @@ const Login = ({ navigation }) => {
                 <Button title="Entrar" onPress={handleLogin} color="#516c76" />
             </View>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Senha')}>
-                <Text style={styles.link}>Esqueceu sua senha? recupere aqui</Text>
-            </TouchableOpacity>
+        <Text style={styles.text}>Esqueceu sua senha? <Text onPress={() => navigation.navigate('Senha')} style={styles.link} >Recupere aqui</Text></Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                <Text style={styles.link}>Ainda não tem cadastro? cadastre-se aqui</Text>
-            </TouchableOpacity>
+        <Text style={styles.text}>Ainda não tem uma conta? <Text onPress={() => navigation.navigate('Cadastrar')} style={styles.link} > Cadastre-se aqui</Text></Text>
 
+       
            
           
         
@@ -107,6 +104,7 @@ title: {
     marginBottom: 20,
 },
 input: {
+    borderRadius: 20,
     height: 40,
     borderColor: '#ffffff',
     borderWidth: 1,
@@ -115,6 +113,7 @@ input: {
     width: '80%',
     marginBottom: '3%',
     backgroundColor: 'white',
+    
    
 },
 buttonContainer: {
@@ -137,9 +136,14 @@ logo: {
     height: '2',
     marginTop: '-25%'
 },
-link:{
-
-  
-}
+text: {
+    color: 'white',
+    fontWeight: '500',
+    
+    },
+    link:{
+      color: '#475f68',
+      fontWeight: '600',
+    }
 });
 export default Login;

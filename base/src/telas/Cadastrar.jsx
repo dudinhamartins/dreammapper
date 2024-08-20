@@ -121,7 +121,7 @@ buttonContainer: {
     width: '40%',
 },
 button: {
-    marginBottom: 10,
+    marginVertical: 10,
     width: '100%',
 },
 mensagem: {
